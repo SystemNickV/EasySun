@@ -33,8 +33,8 @@ namespace EasySun
             Configuration.Bind("Project", new Config()); // see config.json and Service/Config.cs
 
             services.AddDbContext<SunDbContext>(optionsAction =>
-                optionsAction.UseInMemoryDatabase("EasySunDB")); // DB w/o persistent memory for testing purposes
-                //optionsAction.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                //optionsAction.UseInMemoryDatabase("EasySunDB")); // DB w/o persistent memory for testing purposes
+                optionsAction.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
