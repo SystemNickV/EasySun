@@ -11,7 +11,10 @@ namespace EasySun.Database
         public SunDbContext(DbContextOptions<SunDbContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            // Please use migrations in production after deployment.
+            // EnsureCreated() can't be used with migrations and should be used only on development stage.
+            // See https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/migrations?view=aspnetcore-5.0&tabs=visual-studio#remove-ensurecreated
+            // Database.EnsureCreated(); is called in DbInitializer class on app start
         }
 
         public DbSet<Country> Countries { get; set; }

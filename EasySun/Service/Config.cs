@@ -1,5 +1,8 @@
 ﻿namespace EasySun.Service
 {
+    /// <summary>
+    /// Represents appsettings.json elements in "Project" key.
+    /// </summary>
     public class Config
     {
         public static string AppName { get; set; }

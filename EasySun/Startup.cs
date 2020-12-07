@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using EasySun.Database;
 using EasySun.Models;
@@ -30,11 +31,9 @@ namespace EasySun
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            Configuration.Bind("Project", new Config()); // see config.json and Service/Config.cs
+            Configuration.Bind("Project", new Config()); // see appsettings.json and Service/Config.cs
 
-            services.AddDbContext<SunDbContext>(optionsAction =>
-                //optionsAction.UseInMemoryDatabase("EasySunDB")); // DB w/o persistent memory for testing purposes
-                optionsAction.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            ConfigureDatabases(services);
 
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
@@ -46,6 +45,16 @@ namespace EasySun
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = Config.AppName, Version = "v1" });
             });
+        }
+
+        public void ConfigureDatabases(IServiceCollection services)
+        {
+            services.AddDbContext<SunDbContext>(optionsAction =>
+                // optionsAction.UseInMemoryDatabase("EasySunDB")); // DB w/o persistent memory for testing purposes
+                optionsAction.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // Captures database-related exceptions that can be resolved by using Entity Framework migrations.
+            services.AddDatabaseDeveloperPageExceptionFilter();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
