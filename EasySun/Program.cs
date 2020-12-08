@@ -24,6 +24,13 @@ namespace EasySun
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(logBuilder =>
+                {
+                    logBuilder.ClearProviders();
+                    logBuilder.SetMinimumLevel(LogLevel.Trace); // change to reduce data storage consumption
+                    logBuilder.AddLog4Net();
+                    // logging.AddConsole(); // testing / debug
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
