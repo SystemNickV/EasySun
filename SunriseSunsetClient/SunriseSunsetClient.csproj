@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <Title>Sunrise Sunset API Client</Title>
+    <Description>This API is an HTTP-based interface created for easier use of https://sunrise-sunset.org/api. </Description>
+    <PackageId>SunriseSunsetClient</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>SystemNick</Authors>
+    <Copyright>Copyright © Vladimir Sudakov 2020</Copyright>
+    <PackageIconUrl>https://raw.githubusercontent.com/SystemNickV/SunriseSunsetClient/master/package-icon.gif</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/SystemNickV/SunriseSunsetClient</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/SystemNickV/SunriseSunsetClient/master/LICENSE</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

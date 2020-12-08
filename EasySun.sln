@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SunriseSunsetClient", "SunriseSunsetClient\SunriseSunsetClient.csproj", "{C68AE435-95AD-4D4F-843A-733B435ACAC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,12 +24,17 @@ Global
 		{0C7EDCA5-912E-4CEE-8059-D174245FACBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C7EDCA5-912E-4CEE-8059-D174245FACBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C7EDCA5-912E-4CEE-8059-D174245FACBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68AE435-95AD-4D4F-843A-733B435ACAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68AE435-95AD-4D4F-843A-733B435ACAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68AE435-95AD-4D4F-843A-733B435ACAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68AE435-95AD-4D4F-843A-733B435ACAC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0C7EDCA5-912E-4CEE-8059-D174245FACBB} = {8598161E-2A1F-4BE9-A3B0-CB95BAF4B594}
+		{C68AE435-95AD-4D4F-843A-733B435ACAC0} = {8598161E-2A1F-4BE9-A3B0-CB95BAF4B594}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3134597-5D38-4583-9D72-73BF901EFEC3}
